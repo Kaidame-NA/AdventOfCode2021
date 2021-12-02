@@ -1,11 +1,17 @@
 CC=g++
 CFLAGS=-std=c++11 -Wall -Wextra -pedantic
 
+day1part2: day1part2.o
+	$(CC) -o day1part2.exe day1part2.o
+
+day1part2.o: day1part2.cpp
+	$(CC) $(CFLAGS) -c day1part2.cpp
+
 day1: day1.o
-	$(CC) -o day1 day1.o
+	$(CC) -o day1.exe day1.o
 
 day1.o: day1.cpp
 	$(CC) $(CFLAGS) -c day1.cpp
 
 clean:
-	rm -f *.o day1
+	rm -f *.o *.exe
